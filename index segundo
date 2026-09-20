@@ -1,0 +1,29 @@
+<table border="1">
+    <tr>
+        <td style="width: 200px; height: 10px;">
+            <img src="index II/images.jpg" style="width: 200px; height: 200px">
+        </td>
+        <td style="width: 500px; height: 200px;">2</td>
+    </tr>
+
+    <tr>
+        <td style="width: 200px; height: 500px;">
+            <a href="#" onclick="x.innerHTML='<img src=\'index II/images.jpg\'>'">
+                <img src="index II/imagesnaobotao.jpg">
+            </a>
+            <a href="#" onclick="x.innerHTML='oi'">
+                <img src="index II/imagesnaobotao.jpg">
+            </a>
+            <a href="#" onclick="x.innerHTML='nao'">
+                <img src="index II/imagesnaobotao.jpg">
+            </a>
+            <a href="#" onclick="x.innerHTML='talvez'">
+                <img src="index II/imagesnaobotao.jpg">
+            </a>
+            <a href="#" onclick="x.innerHTML='quase'">
+                <img src="index II/imagesnaobotao.jpg">
+            </a>
+        </td>
+        <td id="x">4</td>
+    </tr>
+</table>
