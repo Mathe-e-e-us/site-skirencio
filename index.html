@@ -1,33 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body style="background-image: url('ImagemFundo.png'); background-size: cover;">
+
 <table border="1" style="margin: auto;">
     <tr>
-        <td style="width: 200px; height: 10px;">
+        <td style="width: 200px; height: 200px;">
             <img src="logo.png" style="width: 200px; height: 200px">
         </td>
-        <td style="width: 500px; height: 200px;"><video src = "video.mp4" width="500px" loop autoplay></video></td>
+
+        <td style="width: 500px; height: 200px;">
+            <video src="video.mp4" width="500px" loop controls autoplay muted></video>
+        </td>
+
     </tr>
 
     <tr>
         <td style="width: 200px; height: 500px;">
-            <a href="TextoUm.png" target="X">
+            <a href="#" onclick="x.innerHTML='<img src=\'TextoUm.png\'>'">
                 <img src="imagesnaobotao.jpg">
             </a>
             <br><br>
-            <a href="imagemDois.png" target="X">
+
+            <a href="#" onclick="x.innerHTML='<img src=\'imagemDois.png\'>'">
                 <img src="imagesnaobotao.jpg">
             </a>
             <br><br>
-            <a href="" target="X">
+
+            <a href="#">
                 <img src="imagesnaobotao.jpg">
             </a>
             <br><br>
-            <a href="imagemBotao.png" target="X">
+
+            <a href="#" onclick="x.innerHTML='<img src=\'imagemBotao.png\' onclick=\'trocarTema(this)\'> '">
                 <img src="imagesnaobotao.jpg">
             </a>
             <br><br>
-            <a >
+
+            <a href="#">
                 <img src="imagesnaobotao.jpg">
             </a>
+
         </td>
-        <td id="x">4</td>
+
+        <td id="x">
+        </td>
+
     </tr>
+
 </table>
+
+
+<script>
+
+function trocarTema(imagem) {
+
+    if (imagem.src.includes("imagemBotao.png")) {
+
+        imagem.src = "imagemBotao2.png";
+
+        document.body.style.backgroundImage = "url('ImagemFundo2.png')";
+
+    } else {
+
+        imagem.src = "imagemBotao.png";
+
+        document.body.style.backgroundImage = "url('ImagemFundo.png')";
+
+    }
+
+}
+</script>
+</body>
+</html>
