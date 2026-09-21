@@ -105,6 +105,8 @@ function criarEstrela(event) {
 
     estrela.style.fontSize = (Math.random() * 5 + 5) + "px";
 
+    estrela.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
+
     document.getElementById("ceu").appendChild(estrela);
 
 }
