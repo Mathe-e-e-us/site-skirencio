@@ -132,23 +132,21 @@ function mostrarInterruptor() {
 }
 
 
-function trocarTema(imagem) {
+function trocarTema() {
 
-    if (interruptorLigado == false) {
+    let interruptor = document.getElementById("interruptor");
 
-        imagem.src = "imagemBotao2.png";
+    if (interruptor.src.endsWith("imagemBotao.png")) {
 
-        document.body.style.backgroundImage = "url('imagemFundo2.png')";
+        interruptor.src = "imagemBotao2.png";
 
-        interruptorLigado = true;
+        document.body.style.background = "url('ImagemFundo2.png') center / cover no-repeat fixed";
 
     } else {
 
-        imagem.src = "imagemBotao.png";
+        interruptor.src = "imagemBotao.png";
 
-        document.body.style.backgroundImage = "url('imagemFundo.png')";
-
-        interruptorLigado = false;
+        document.body.style.background = "url('ImagemFundo.png') center / cover no-repeat fixed";
 
     }
 
