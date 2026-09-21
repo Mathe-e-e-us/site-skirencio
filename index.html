@@ -1,475 +1,57 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
-<style>
-
-/* FUNDO DA PÁGINA */
-
-body {
-    background-image: url('ImagemFundo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-
-/* TABELA */
-
-table {
-    margin: auto;
-}
-
-
-/* ESCONDE OS CHECKBOXES */
-
-input {
-    display: none;
-}
-
-
-/* BOTÕES DA ESQUERDA */
-
-.botoes img {
-    width: 50px;
-    cursor: pointer;
-}
-
-
-/* CÉLULA DO CONTEÚDO */
-
-.conteudo {
-    width: 500px;
-    height: 500px;
-    position: relative;
-}
-
-
-/* ESCONDE AS IMAGENS */
-
-.conteudo > img {
-    display: none;
-}
-
-
-/* ========================= */
-/* BOTÃO 1 */
-/* ========================= */
-
-#botao1:checked ~ table .textoUm {
-    display: block;
-}
-
-
-/* ========================= */
-/* BOTÃO 2 */
-/* ========================= */
-
-#botao2:checked ~ table .imagemDois {
-    display: block;
-}
-
-
-/* ========================= */
-/* BOTÃO 3 */
-/* ========================= */
-
-.ceu {
-    display: none;
-
-    width: 500px;
-    height: 500px;
-
-    background-color: black;
-
-    position: relative;
-}
-
-
-/* MOSTRA O CÉU */
-
-#botao3:checked ~ table .ceu {
-    display: block;
-}
-
-
-/* ESTRELAS */
-
-.estrela {
-    position: absolute;
-    color: white;
-    font-size: 8px;
-}
-
-
-/* POSIÇÕES DAS ESTRELAS */
-
-.e1 {
-    left: 50px;
-    top: 80px;
-}
-
-.e2 {
-    left: 150px;
-    top: 40px;
-}
-
-.e3 {
-    left: 250px;
-    top: 120px;
-}
-
-.e4 {
-    left: 350px;
-    top: 60px;
-}
-
-.e5 {
-    left: 450px;
-    top: 180px;
-}
-
-.e6 {
-    left: 100px;
-    top: 220px;
-}
-
-.e7 {
-    left: 200px;
-    top: 300px;
-}
-
-.e8 {
-    left: 300px;
-    top: 250px;
-}
-
-.e9 {
-    left: 400px;
-    top: 350px;
-}
-
-.e10 {
-    left: 70px;
-    top: 400px;
-}
-
-.e11 {
-    left: 180px;
-    top: 450px;
-}
-
-.e12 {
-    left: 330px;
-    top: 430px;
-}
-
-
-/* ========================= */
-/* BOTÃO 4 */
-/* ========================= */
-
-
-/* CÉLULA DO INTERRUPTOR */
-
-.interruptorCelula {
-    display: none;
-
-    width: 500px;
-    height: 500px;
-
-    position: relative;
-
-    background-image: url('ImagemFundo.png');
-    background-size: cover;
-    background-position: center;
-}
-
-
-/* MOSTRA A CÉLULA QUANDO BOTÃO 4 É SELECIONADO */
-
-#botao4:checked ~ table .interruptorCelula {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* INTERRUPTOR */
-
-.interruptorCelula img {
-    width: 400px;
-    cursor: pointer;
-}
-
-
-/* ESCONDE O CHECKBOX DO INTERRUPTOR */
-
-#interruptor {
-    display: none;
-}
-
-
-/* ========================= */
-/* INTERRUPTOR LIGADO */
-/* ========================= */
-
-
-/* MUDA O FUNDO DA CÉLULA */
-
-#interruptor:checked + .interruptorCelula {
-    background-image: url('ImagemFundo2.png');
-}
-
-
-/* MUDA A IMAGEM DO INTERRUPTOR */
-
-#interruptor:checked + .interruptorCelula label img {
-    content: url('imagemBotao2.png');
-}
-
-
-/* ========================= */
-/* BOTÃO 5 */
-/* ========================= */
-
-#botao5:checked ~ table .imagemCinco {
-    display: block;
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- BOTÕES PRINCIPAIS -->
-
-<input type="radio" name="botoes" id="botao1">
-
-<input type="radio" name="botoes" id="botao2">
-
-<input type="radio" name="botoes" id="botao3">
-
-<input type="radio" name="botoes" id="botao4">
-
-<input type="radio" name="botoes" id="botao5">
-
-
-<!-- INTERRUPTOR -->
-
-<input type="checkbox" id="interruptor">
-
-
-<table border="2">
-
-
-    <!-- PRIMEIRA LINHA -->
-
-    <tr>
-
-
-        <!-- LOGO -->
-
-        <td style="width: 200px; height: 200px;">
-
-            <img
-            src="logo.png"
-            style="width: 200px; height: 200px"
-            >
-
-        </td>
-
-
-        <!-- VÍDEO -->
-
-        <td style="width: 500px; height: 200px;">
-
-            <video
-            src="VIdeoespaco.mp4"
-            width="500px"
-            loop
-            controls
-            autoplay
-            muted>
-            </video>
-
-        </td>
-
-
-    </tr>
-
-
-    <!-- SEGUNDA LINHA -->
-
-    <tr>
-
-
-        <!-- BOTÕES -->
-
-        <td
-        class="botoes"
-        style="width: 200px; height: 500px;">
-
-
-            <!-- BOTÃO 1 -->
-
-            <label for="botao1">
-
-                <img src="imagemLInk1.png">
-
-            </label>
-
-            <br><br>
-
-
-            <!-- BOTÃO 2 -->
-
-            <label for="botao2">
-
-                <img src="ImagemLInk2.png">
-
-            </label>
-
-            <br><br>
-
-
-            <!-- BOTÃO 3 -->
-
-            <label for="botao3">
-
-                <img src="imagemLInk3.png">
-
-            </label>
-
-            <br><br>
-
-
-            <!-- BOTÃO 4 -->
-
-            <label for="botao4">
-
-                <img src="imagemLInk4.png">
-
-            </label>
-
-            <br><br>
-
-
-            <!-- BOTÃO 5 -->
-
-            <label for="botao5">
-
-                <img src="imagemLInk5.png">
-
-            </label>
-
-
-        </td>
-
-
-        <!-- CONTEÚDO -->
-
-        <td class="conteudo">
-
-
-            <!-- ==================== -->
-            <!-- BOTÃO 1 -->
-            <!-- ==================== -->
-
-            <img
-            class="textoUm"
-            src="TextoUm.png"
-            >
-
-
-            <!-- ==================== -->
-            <!-- BOTÃO 2 -->
-            <!-- ==================== -->
-
-            <img
-            class="imagemDois"
-            src="imagemDois.png"
-            >
-
-
-            <!-- ==================== -->
-            <!-- BOTÃO 3 -->
-            <!-- ==================== -->
-
-            <div class="ceu">
-
-
-                <span class="estrela e1">★</span>
-
-                <span class="estrela e2">★</span>
-
-                <span class="estrela e3">★</span>
-
-                <span class="estrela e4">★</span>
-
-                <span class="estrela e5">★</span>
-
-                <span class="estrela e6">★</span>
-
-                <span class="estrela e7">★</span>
-
-                <span class="estrela e8">★</span>
-
-                <span class="estrela e9">★</span>
-
-                <span class="estrela e10">★</span>
-
-                <span class="estrela e11">★</span>
-
-                <span class="estrela e12">★</span>
-
-
-            </div>
-
-
-            <!-- ==================== -->
-            <!-- BOTÃO 4 -->
-            <!-- ==================== -->
-
-            <div class="interruptorCelula">
-
-
-                <label for="interruptor">
-
-                    <img
-                    src="imagemBotao.png"
-                    >
-
-                </label>
-
-
-            </div>
-
-
-            <!-- ==================== -->
-            <!-- BOTÃO 5 -->
-            <!-- ==================== -->
-
-            <img
-            class="imagemCinco"
-            src="imagemCinco.png"
-            >
-
-
-        </td>
-
-
-    </tr>
-
-
-</table>
-
+<body background="ImagemFundo.png">
+
+    <table border="2" align="center">
+        <tr>
+            <td width="200" height="200" align="center" valign="middle">
+                <img src="logo.png" width="200" height="200">
+            </td>
+            <td width="500" height="200" align="center" valign="middle">
+                <video src="VIdeoespaco.mp4" width="500" loop controls autoplay muted></video>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td width="200" height="500" align="center" valign="top">
+                <!-- BOTÃO 1 -->
+                <a href="TextoUm.png" target="celula_quatro">
+                    <img src="imagemLInk1.png" width="100">
+                </a>
+                <br><br>
+                
+                <!-- BOTÃO 2 -->
+                <a href="imagemDois.png" target="celula_quatro">
+                    <img src="ImagemLInk2.png" width="100">
+                </a>
+                <br><br>
+                
+                <!-- BOTÃO 3 -->
+                <a href="imagemcomparasao.jpg" target="celula_quatro">
+                    <img src="imagemLInk3.png" width="100">
+                </a>
+                <br><br>
+                
+                <!-- BOTÃO 4 -->
+                <a href="imagemBotao.png" target="celula_quatro">
+                    <img src="imagemLInk4.png" width="100">
+                </a>
+                <br><br>
+                
+                <!-- BOTÃO 5 -->
+                <a href="imagemCinco.png" target="celula_quatro">
+                    <img src="imagemLInk5.png" width="100">
+                </a>
+            </td>
+            
+            <!-- CÉLULA DO CONTEÚDO (CÉLULA QUATRO) -->
+            <td width="500" height="500" align="center" valign="middle">
+                <!-- O iframe captura o clique dos botões e mostra o conteúdo aqui dentro -->
+                <iframe name="celula_quatro" width="500" height="500" frameborder="0"></iframe>
+            </td>
+        </tr>
+    </table>
 
 </body>
-
 </html>
