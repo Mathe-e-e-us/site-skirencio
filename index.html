@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
-<body style="background-image: url('ImagemFundo.png'); background-size: cover;">
+
+<body style="background-image: url('ImagemFundo.png'); background-size: cover; background-repeat: no-repeat;">
 
 <table border="1" style="margin: auto;">
+
     <tr>
+
         <td style="width: 200px; height: 200px;">
             <img src="logo.png" style="width: 200px; height: 200px">
         </td>
@@ -11,34 +14,40 @@
         <td style="width: 500px; height: 200px;">
             <video src="video.mp4" width="500px" loop controls autoplay muted></video>
         </td>
+
     </tr>
 
+
     <tr>
+
         <td style="width: 200px; height: 500px;">
 
             <!-- BOTÃO 1 -->
-            <a href="#" onclick="x.innerHTML='<img src=\'TextoUm.png\'>'">
+            <a href="#" onclick="document.getElementById('x').innerHTML='<img src=\'TextoUm.png\'>'; return false;">
                 <img src="imagesnaobotao.jpg">
             </a>
 
             <br><br>
+
 
             <!-- BOTÃO 2 -->
-            <a href="#" onclick="x.innerHTML='<img src=\'imagemDois.png\'>'">
+            <a href="#" onclick="document.getElementById('x').innerHTML='<img src=\'imagemDois.png\'>'; return false;">
                 <img src="imagesnaobotao.jpg">
             </a>
 
             <br><br>
+
 
             <!-- BOTÃO 3 -->
-            <a href="#" onclick="mostrarEstrelas()">
+            <a href="#" onclick="mostrarEstrelas(); return false;">
                 <img src="imagesnaobotao.jpg">
             </a>
 
             <br><br>
 
+
             <!-- BOTÃO 4 -->
-            <a href="#" onclick="x.innerHTML='<img src=\'imagemBotao.png\' onclick=\'trocarTema(this)\'> '">
+            <a href="#" onclick="mostrarInterruptor(); return false;">
                 <img src="imagesnaobotao.jpg">
             </a>
 
@@ -46,7 +55,8 @@
 
         </td>
 
-        <!-- CÉLULA ONDE APARECE O CONTEÚDO -->
+
+        <!-- CÉLULA DO CONTEÚDO -->
         <td id="x">
         </td>
 
@@ -57,13 +67,23 @@
 
 <script>
 
+
+/* BOTÃO 3 */
+
 function mostrarEstrelas() {
 
-    x.innerHTML = `
+    document.getElementById("x").innerHTML = `
+    
         <div id="ceu"
-        style="width: 500px; height: 500px; background-color: black; position: relative;"
+        style="
+        width: 500px;
+        height: 500px;
+        background-color: black;
+        position: relative;
+        "
         onclick="criarEstrela(event)">
         </div>
+    
     `;
 
 }
@@ -78,6 +98,7 @@ function criarEstrela(event) {
     estrela.style.position = "absolute";
 
     estrela.style.left = event.offsetX + "px";
+
     estrela.style.top = event.offsetY + "px";
 
     estrela.style.color = "white";
@@ -85,6 +106,23 @@ function criarEstrela(event) {
     estrela.style.fontSize = (Math.random() * 5 + 5) + "px";
 
     document.getElementById("ceu").appendChild(estrela);
+
+}
+
+
+/* BOTÃO 4 */
+
+function mostrarInterruptor() {
+
+    document.getElementById("x").innerHTML = `
+    
+        <img 
+        src="imagemBotao.png" 
+        width="80"
+        onclick="trocarTema(this)"
+        >
+    
+    `;
 
 }
 
