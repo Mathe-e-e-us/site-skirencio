@@ -1,15 +1,87 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+
+<style>
+
+/* ========================= */
+/* INTERRUPTOR */
+/* ========================= */
+
+/* Esconde o checkbox */
+#interruptor {
+    display: none;
+}
+
+
+/* O interruptor começa escondido */
+#areaInterruptor {
+    display: none;
+}
+
+
+/* Quando o checkbox estiver marcado,
+   mostra o interruptor */
+#interruptor:checked ~ table #areaInterruptor {
+    display: block;
+}
+
+
+/* Imagem normal */
+.botaoNormal {
+    display: block;
+}
+
+
+/* Imagem ligada começa escondida */
+.botaoLigado {
+    display: none;
+}
+
+
+/* Quando estiver ligado,
+   esconde a imagem normal */
+#interruptor:checked ~ table .botaoNormal {
+    display: none;
+}
+
+
+/* Quando estiver ligado,
+   mostra a imagem ligada */
+#interruptor:checked ~ table .botaoLigado {
+    display: block;
+}
+
+
+/* Muda o fundo quando o interruptor estiver ligado */
+body:has(#interruptor:checked) {
+    background-image: url('ImagemFundo2.png') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+</style>
+
+</head>
+
+
 <body style="background-image: url('ImagemFundo.png'); background-size: cover; background-repeat: no-repeat;">
 
-<table border="1" style="margin: auto;">
+
+<!-- INTERRUPTOR -->
+<input type="checkbox" id="interruptor">
+
+
+<table border="2" style="margin: auto;">
 
     <tr>
 
         <td style="width: 200px; height: 200px;">
             <img src="logo.png" style="width: 200px; height: 200px">
         </td>
+
 
         <td style="width: 500px; height: 200px;">
             <video src="VIdeoespaco.mp4" width="500px" loop controls autoplay muted></video>
@@ -22,42 +94,97 @@
 
         <td style="width: 200px; height: 500px;">
 
+
             <!-- BOTÃO 1 -->
-            <a href="#" onclick="document.getElementById('x').innerHTML='<img src=\'TextoUm.png\'>'; return false;" style="width: 50px;">
-                <img src="imagemLInk1.png">
+
+            <a href="#" onclick="document.getElementById('conteudo').innerHTML='<img src=\'TextoUm.png\'>'; return false;">
+
+                <img src="imagemLInk1.png" style="width: 50px;">
+
             </a>
+
 
             <br><br>
 
 
             <!-- BOTÃO 2 -->
-            <a href="#" onclick="document.getElementById('x').innerHTML='<img src=\'imagemDois.png\'>'; return false;" style="width: 50px;">
-                <img src="ImagemLInk2.png">
+
+            <a href="#" onclick="document.getElementById('conteudo').innerHTML='<img src=\'imagemDois.png\'>'; return false;">
+
+                <img src="ImagemLInk2.png" style="width: 50px;">
+
             </a>
+
 
             <br><br>
 
 
             <!-- BOTÃO 3 -->
-            <a href="#" onclick="mostrarEstrelas(); return false;" style="width: 50px;">
-                <img src="imagemLInk3.png">
+
+            <a href="#" onclick="mostrarEstrelas(); return false;">
+
+                <img src="imagemLInk3.png" style="width: 50px;">
+
             </a>
+
 
             <br><br>
 
 
             <!-- BOTÃO 4 -->
-            <a href="#" onclick="mostrarInterruptor(); return false;" style="width: 50px;">
-                <img src="imagemLInk4.png">
-            </a>
+
+            <label for="interruptor">
+
+                <img src="imagemLInk4.png" width="50">
+
+            </label>
+
 
             <br><br>
+
+
+            <!-- BOTÃO 5 -->
+
+            <a href="#" onclick="document.getElementById('conteudo').innerHTML='<img src=\'imagemCinco.png\'>'; return false;">
+
+                <img src="imagemLInk5.png" style="width: 50px;">
+
+            </a>
+
 
         </td>
 
 
         <!-- CÉLULA DO CONTEÚDO -->
+
         <td id="x">
+
+
+            <!-- ÁREA ONDE APARECEM AS COISAS DOS BOTÕES -->
+
+            <div id="conteudo">
+            </div>
+
+
+            <!-- INTERRUPTOR -->
+
+            <label for="interruptor" id="areaInterruptor">
+
+                <img
+                    src="imagemBotao.png"
+                    class="botaoNormal"
+                    width="400"
+                >
+
+                <img
+                    src="imagemBotao2.png"
+                    class="botaoLigado"
+                    width="400"
+                >
+
+            </label>
+
+
         </td>
 
     </tr>
@@ -65,14 +192,18 @@
 </table>
 
 
+
 <script>
 
 
-/* BOTÃO 3 */
+/* ========================= */
+/* BOTÃO 3 - ESTRELAS */
+/* ========================= */
+
 
 function mostrarEstrelas() {
 
-    document.getElementById("x").innerHTML = `
+    document.getElementById("conteudo").innerHTML = `
     
         <div id="ceu"
         style="
@@ -93,66 +224,36 @@ function criarEstrela(event) {
 
     let estrela = document.createElement("div");
 
+
     estrela.innerHTML = "★";
+
 
     estrela.style.position = "absolute";
 
+
     estrela.style.left = event.offsetX + "px";
+
 
     estrela.style.top = event.offsetY + "px";
 
+
     estrela.style.color = "white";
+
 
     estrela.style.fontSize = (Math.random() * 5 + 5) + "px";
 
-    estrela.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
+
+    estrela.style.transform =
+        "rotate(" + (Math.random() * 360) + "deg)";
+
 
     document.getElementById("ceu").appendChild(estrela);
 
 }
 
 
-/* BOTÃO 4 */
-
-let interruptorLigado = false;
-
-
-function mostrarInterruptor() {
-
-    document.getElementById("x").innerHTML = `
-    
-        <img
-        src="imagemBotao.png"
-        width="80"
-        onclick="trocarTema(this)"
-        >
-    
-    `;
-
-}
-
-
-function trocarTema() {
-
-    let interruptor = document.getElementById("interruptor");
-
-    if (interruptor.src.endsWith("imagemBotao.png")) {
-
-        interruptor.src = "imagemBotao2.png";
-
-        document.body.style.background = "url('ImagemFundo2.png') center / cover no-repeat fixed";
-
-    } else {
-
-        interruptor.src = "imagemBotao.png";
-
-        document.body.style.background = "url('ImagemFundo.png') center / cover no-repeat fixed";
-
-    }
-
-}
-
 </script>
+
 
 </body>
 </html>
