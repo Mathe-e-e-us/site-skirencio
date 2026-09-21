@@ -5,61 +5,238 @@
 
 <style>
 
+/* FUNDO DA PÁGINA */
+
+body {
+    background-image: url('ImagemFundo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* TABELA */
+
+table {
+    margin: auto;
+}
+
+
+/* ESCONDE OS CHECKBOXES */
+
+input {
+    display: none;
+}
+
+
+/* BOTÕES DA ESQUERDA */
+
+.botoes img {
+    width: 50px;
+    cursor: pointer;
+}
+
+
+/* CÉLULA DO CONTEÚDO */
+
+.conteudo {
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+
+/* ESCONDE AS IMAGENS */
+
+.conteudo > img {
+    display: none;
+}
+
+
 /* ========================= */
-/* INTERRUPTOR */
+/* BOTÃO 1 */
 /* ========================= */
 
-/* Esconde o checkbox */
+#botao1:checked ~ table .textoUm {
+    display: block;
+}
+
+
+/* ========================= */
+/* BOTÃO 2 */
+/* ========================= */
+
+#botao2:checked ~ table .imagemDois {
+    display: block;
+}
+
+
+/* ========================= */
+/* BOTÃO 3 */
+/* ========================= */
+
+.ceu {
+    display: none;
+
+    width: 500px;
+    height: 500px;
+
+    background-color: black;
+
+    position: relative;
+}
+
+
+/* MOSTRA O CÉU */
+
+#botao3:checked ~ table .ceu {
+    display: block;
+}
+
+
+/* ESTRELAS */
+
+.estrela {
+    position: absolute;
+    color: white;
+    font-size: 8px;
+}
+
+
+/* POSIÇÕES DAS ESTRELAS */
+
+.e1 {
+    left: 50px;
+    top: 80px;
+}
+
+.e2 {
+    left: 150px;
+    top: 40px;
+}
+
+.e3 {
+    left: 250px;
+    top: 120px;
+}
+
+.e4 {
+    left: 350px;
+    top: 60px;
+}
+
+.e5 {
+    left: 450px;
+    top: 180px;
+}
+
+.e6 {
+    left: 100px;
+    top: 220px;
+}
+
+.e7 {
+    left: 200px;
+    top: 300px;
+}
+
+.e8 {
+    left: 300px;
+    top: 250px;
+}
+
+.e9 {
+    left: 400px;
+    top: 350px;
+}
+
+.e10 {
+    left: 70px;
+    top: 400px;
+}
+
+.e11 {
+    left: 180px;
+    top: 450px;
+}
+
+.e12 {
+    left: 330px;
+    top: 430px;
+}
+
+
+/* ========================= */
+/* BOTÃO 4 */
+/* ========================= */
+
+
+/* CÉLULA DO INTERRUPTOR */
+
+.interruptorCelula {
+    display: none;
+
+    width: 500px;
+    height: 500px;
+
+    position: relative;
+
+    background-image: url('ImagemFundo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* MOSTRA A CÉLULA QUANDO BOTÃO 4 É SELECIONADO */
+
+#botao4:checked ~ table .interruptorCelula {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* INTERRUPTOR */
+
+.interruptorCelula img {
+    width: 400px;
+    cursor: pointer;
+}
+
+
+/* ESCONDE O CHECKBOX DO INTERRUPTOR */
+
 #interruptor {
     display: none;
 }
 
 
-/* O interruptor começa escondido */
-#areaInterruptor {
-    display: none;
+/* ========================= */
+/* INTERRUPTOR LIGADO */
+/* ========================= */
+
+
+/* MUDA O FUNDO DA CÉLULA */
+
+#interruptor:checked + .interruptorCelula {
+    background-image: url('ImagemFundo2.png');
 }
 
 
-/* Quando o checkbox estiver marcado,
-   mostra o interruptor */
-#interruptor:checked ~ table #areaInterruptor {
+/* MUDA A IMAGEM DO INTERRUPTOR */
+
+#interruptor:checked + .interruptorCelula label img {
+    content: url('imagemBotao2.png');
+}
+
+
+/* ========================= */
+/* BOTÃO 5 */
+/* ========================= */
+
+#botao5:checked ~ table .imagemCinco {
     display: block;
-}
-
-
-/* Imagem normal */
-.botaoNormal {
-    display: block;
-}
-
-
-/* Imagem ligada começa escondida */
-.botaoLigado {
-    display: none;
-}
-
-
-/* Quando estiver ligado,
-   esconde a imagem normal */
-#interruptor:checked ~ table .botaoNormal {
-    display: none;
-}
-
-
-/* Quando estiver ligado,
-   mostra a imagem ligada */
-#interruptor:checked ~ table .botaoLigado {
-    display: block;
-}
-
-
-/* Muda o fundo quando o interruptor estiver ligado */
-body:has(#interruptor:checked) {
-    background-image: url('ImagemFundo2.png') !important;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 </style>
@@ -67,193 +244,232 @@ body:has(#interruptor:checked) {
 </head>
 
 
-<body style="background-image: url('ImagemFundo.png'); background-size: cover; background-repeat: no-repeat;">
+<body>
+
+
+<!-- BOTÕES PRINCIPAIS -->
+
+<input type="radio" name="botoes" id="botao1">
+
+<input type="radio" name="botoes" id="botao2">
+
+<input type="radio" name="botoes" id="botao3">
+
+<input type="radio" name="botoes" id="botao4">
+
+<input type="radio" name="botoes" id="botao5">
 
 
 <!-- INTERRUPTOR -->
+
 <input type="checkbox" id="interruptor">
 
 
-<table border="2" style="margin: auto;">
+<table border="2">
+
+
+    <!-- PRIMEIRA LINHA -->
 
     <tr>
 
+
+        <!-- LOGO -->
+
         <td style="width: 200px; height: 200px;">
-            <img src="logo.png" style="width: 200px; height: 200px">
+
+            <img
+            src="logo.png"
+            style="width: 200px; height: 200px"
+            >
+
         </td>
 
+
+        <!-- VÍDEO -->
 
         <td style="width: 500px; height: 200px;">
-            <video src="VIdeoespaco.mp4" width="500px" loop controls autoplay muted></video>
+
+            <video
+            src="VIdeoespaco.mp4"
+            width="500px"
+            loop
+            controls
+            autoplay
+            muted>
+            </video>
+
         </td>
+
 
     </tr>
 
 
+    <!-- SEGUNDA LINHA -->
+
     <tr>
 
-        <td style="width: 200px; height: 500px;">
+
+        <!-- BOTÕES -->
+
+        <td
+        class="botoes"
+        style="width: 200px; height: 500px;">
 
 
             <!-- BOTÃO 1 -->
 
-            <a href="#" onclick="document.getElementById('conteudo').innerHTML='<img src=\'TextoUm.png\'>'; return false;">
+            <label for="botao1">
 
-                <img src="imagemLInk1.png" style="width: 50px;">
+                <img src="imagemLInk1.png">
 
-            </a>
-
+            </label>
 
             <br><br>
 
 
             <!-- BOTÃO 2 -->
 
-            <a href="#" onclick="document.getElementById('conteudo').innerHTML='<img src=\'imagemDois.png\'>'; return false;">
+            <label for="botao2">
 
-                <img src="ImagemLInk2.png" style="width: 50px;">
+                <img src="ImagemLInk2.png">
 
-            </a>
-
+            </label>
 
             <br><br>
 
 
             <!-- BOTÃO 3 -->
 
-            <a href="#" onclick="mostrarEstrelas(); return false;">
+            <label for="botao3">
 
-                <img src="imagemLInk3.png" style="width: 50px;">
+                <img src="imagemLInk3.png">
 
-            </a>
-
+            </label>
 
             <br><br>
 
 
             <!-- BOTÃO 4 -->
 
-            <label for="interruptor">
+            <label for="botao4">
 
-                <img src="imagemLInk4.png" width="50">
+                <img src="imagemLInk4.png">
 
             </label>
-
 
             <br><br>
 
 
             <!-- BOTÃO 5 -->
 
-            <a href="#" onclick="document.getElementById('conteudo').innerHTML='<img src=\'imagemCinco.png\'>'; return false;">
+            <label for="botao5">
 
-                <img src="imagemLInk5.png" style="width: 50px;">
-
-            </a>
-
-
-        </td>
-
-
-        <!-- CÉLULA DO CONTEÚDO -->
-
-        <td id="x">
-
-
-            <!-- ÁREA ONDE APARECEM AS COISAS DOS BOTÕES -->
-
-            <div id="conteudo">
-            </div>
-
-
-            <!-- INTERRUPTOR -->
-
-            <label for="interruptor" id="areaInterruptor">
-
-                <img
-                    src="imagemBotao.png"
-                    class="botaoNormal"
-                    width="400"
-                >
-
-                <img
-                    src="imagemBotao2.png"
-                    class="botaoLigado"
-                    width="400"
-                >
+                <img src="imagemLInk5.png">
 
             </label>
 
 
         </td>
 
+
+        <!-- CONTEÚDO -->
+
+        <td class="conteudo">
+
+
+            <!-- ==================== -->
+            <!-- BOTÃO 1 -->
+            <!-- ==================== -->
+
+            <img
+            class="textoUm"
+            src="TextoUm.png"
+            >
+
+
+            <!-- ==================== -->
+            <!-- BOTÃO 2 -->
+            <!-- ==================== -->
+
+            <img
+            class="imagemDois"
+            src="imagemDois.png"
+            >
+
+
+            <!-- ==================== -->
+            <!-- BOTÃO 3 -->
+            <!-- ==================== -->
+
+            <div class="ceu">
+
+
+                <span class="estrela e1">★</span>
+
+                <span class="estrela e2">★</span>
+
+                <span class="estrela e3">★</span>
+
+                <span class="estrela e4">★</span>
+
+                <span class="estrela e5">★</span>
+
+                <span class="estrela e6">★</span>
+
+                <span class="estrela e7">★</span>
+
+                <span class="estrela e8">★</span>
+
+                <span class="estrela e9">★</span>
+
+                <span class="estrela e10">★</span>
+
+                <span class="estrela e11">★</span>
+
+                <span class="estrela e12">★</span>
+
+
+            </div>
+
+
+            <!-- ==================== -->
+            <!-- BOTÃO 4 -->
+            <!-- ==================== -->
+
+            <div class="interruptorCelula">
+
+
+                <label for="interruptor">
+
+                    <img
+                    src="imagemBotao.png"
+                    >
+
+                </label>
+
+
+            </div>
+
+
+            <!-- ==================== -->
+            <!-- BOTÃO 5 -->
+            <!-- ==================== -->
+
+            <img
+            class="imagemCinco"
+            src="imagemCinco.png"
+            >
+
+
+        </td>
+
+
     </tr>
+
 
 </table>
 
 
-
-<script>
-
-
-/* ========================= */
-/* BOTÃO 3 - ESTRELAS */
-/* ========================= */
-
-
-function mostrarEstrelas() {
-
-    document.getElementById("conteudo").innerHTML = `
-    
-        <div id="ceu"
-        style="
-        width: 500px;
-        height: 500px;
-        background-color: black;
-        position: relative;
-        "
-        onclick="criarEstrela(event)">
-        </div>
-    
-    `;
-
-}
-
-
-function criarEstrela(event) {
-
-    let estrela = document.createElement("div");
-
-
-    estrela.innerHTML = "★";
-
-
-    estrela.style.position = "absolute";
-
-
-    estrela.style.left = event.offsetX + "px";
-
-
-    estrela.style.top = event.offsetY + "px";
-
-
-    estrela.style.color = "white";
-
-
-    estrela.style.fontSize = (Math.random() * 5 + 5) + "px";
-
-
-    estrela.style.transform =
-        "rotate(" + (Math.random() * 360) + "deg)";
-
-
-    document.getElementById("ceu").appendChild(estrela);
-
-}
-
-
-</script>
-
-
 </body>
+
 </html>
