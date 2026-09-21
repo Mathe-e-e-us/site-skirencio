@@ -11,37 +11,42 @@
         <td style="width: 500px; height: 200px;">
             <video src="video.mp4" width="500px" loop controls autoplay muted></video>
         </td>
-
     </tr>
 
     <tr>
         <td style="width: 200px; height: 500px;">
+
+            <!-- BOTÃO 1 -->
             <a href="#" onclick="x.innerHTML='<img src=\'TextoUm.png\'>'">
                 <img src="imagesnaobotao.jpg">
             </a>
+
             <br><br>
 
+            <!-- BOTÃO 2 -->
             <a href="#" onclick="x.innerHTML='<img src=\'imagemDois.png\'>'">
                 <img src="imagesnaobotao.jpg">
             </a>
+
             <br><br>
 
-            <a href="#">
+            <!-- BOTÃO 3 -->
+            <a href="#" onclick="mostrarEstrelas()">
                 <img src="imagesnaobotao.jpg">
             </a>
+
             <br><br>
 
+            <!-- BOTÃO 4 -->
             <a href="#" onclick="x.innerHTML='<img src=\'imagemBotao.png\' onclick=\'trocarTema(this)\'> '">
                 <img src="imagesnaobotao.jpg">
             </a>
-            <br><br>
 
-            <a href="#">
-                <img src="imagesnaobotao.jpg">
-            </a>
+            <br><br>
 
         </td>
 
+        <!-- CÉLULA ONDE APARECE O CONTEÚDO -->
         <td id="x">
         </td>
 
@@ -51,6 +56,38 @@
 
 
 <script>
+
+function mostrarEstrelas() {
+
+    x.innerHTML = `
+        <div id="ceu"
+        style="width: 500px; height: 500px; background-color: black; position: relative;"
+        onclick="criarEstrela(event)">
+        </div>
+    `;
+
+}
+
+
+function criarEstrela(event) {
+
+    let estrela = document.createElement("div");
+
+    estrela.innerHTML = "★";
+
+    estrela.style.position = "absolute";
+
+    estrela.style.left = event.offsetX + "px";
+    estrela.style.top = event.offsetY + "px";
+
+    estrela.style.color = "white";
+
+    estrela.style.fontSize = (Math.random() * 5 + 5) + "px";
+
+    document.getElementById("ceu").appendChild(estrela);
+
+}
+
 
 function trocarTema(imagem) {
 
@@ -69,6 +106,8 @@ function trocarTema(imagem) {
     }
 
 }
+
 </script>
+
 </body>
 </html>
