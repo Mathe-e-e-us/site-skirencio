@@ -1,60 +1,160 @@
 <!DOCTYPE html>
 <html>
-<body background="ImagemFundo.png"
+
+<body style="
+    background-image: url('ImagemFundo.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;>
-
-    <table border="2" align="center">
-        <tr>
-            <td width="200px" height="200px" align="center" valign="middle">
-                <img src="logo.png" width="200px" height="200px">
-            </td>
-            <td width="500px" height="200px" align="center" valign="middle">
-                <video src="VIdeoespaco.mp4" width="500px" height="200px" loop controls autoplay muted></video>
-            </td>
-        </tr>
+    background-attachment: fixed;
+">
 
 
-        <tr>
-            <td width="200" height="500" align="center" valign="top">
-                <!-- BOTÃO 1 -->
-                <a href="TextoUm.png" target="celula_quatro" width="500" height="500">
-                    <img src="imagemLInk1.png" width="175px">
-                </a>
-                <br>
-                
-                <!-- BOTÃO 2 -->
-                <a href="imagemDois.png" target="celula_quatro" width="500" height="500">
-                    <img src="ImagemLInk2.png" width="175">
-                </a>
-                <br>
-                
-                <!-- BOTÃO 3 -->
-                <a href="imagemcomparasao.jpg" target="celula_quatro" width="500" height="500">
-                    <img src="imagemLInk3.png" width="175">
-                </a>
-                <br>
-                
-                <!-- BOTÃO 4 -->
-                <a href="imagemanti.png" target="celula_quatro" width="500" height="500">
-                    <img src="imagemLInk4.png" width="175">
-                </a>
-                <br>
-                
-                <!-- BOTÃO 5 -->
-                <a href="imagemCinco.png" target="celula_quatro" width="500" height="500">
-                    <img src="imagemLInk5.png" width="175">
-                </a>
-            </td>
-            
+<table border="2" align="center">
+
+
+    <!-- PRIMEIRA LINHA -->
+
+    <tr>
+
+        <!-- CÉLULA 1 - LOGO -->
+
+        <td width="200px" height="200px" align="center" valign="middle">
+
+            <img
+            src="logo.png"
+            width="200px"
+            height="200px">
+
+        </td>
+
+
+        <!-- CÉLULA 2 - VÍDEO -->
+
+        <td width="500px" height="200px" align="center" valign="middle">
+
+            <video
+            src="VIdeoespaco.mp4"
+            width="500px"
+            height="200px"
+            loop
+            controls
+            autoplay
+            muted>
+            </video>
+
+        </td>
+
+    </tr>
+
+
+    <!-- SEGUNDA LINHA -->
+
+    <tr>
+
+
+        <!-- CÉLULA 3 - BOTÕES -->
+
+        <td width="200px" height="500px" align="center" valign="top">
+
+
+            <!-- BOTÃO 1 -->
+
+            <a href="#"
+            onclick="
+            document.getElementById('x').innerHTML =
+            '<img src=\'TextoUm.png\' width=\'500px\' height=\'500px\'>';
+            return false;
+            ">
+
+                <img
+                src="imagemLInk1.png"
+                width="175px">
+
+            </a>
+
+            <br>
+
+
+            <!-- BOTÃO 2 -->
+
+            <a href="#"
+            onclick="
+            document.getElementById('x').innerHTML =
+            '<img src=\'imagemDois.png\' width=\'500px\' height=\'500px\'>';
+            return false;
+            ">
+
+                <img
+                src="ImagemLInk2.png"
+                width="175px">
+
+            </a>
+
+            <br>
+
+
+            <!-- BOTÃO 3 -->
+
+            <a href="#"
+            onclick="
+            document.getElementById('x').innerHTML =
+            '<img src=\'imagemcomparasao.jpg\' width=\'500px\' height=\'500px\'>';
+            return false;
+            ">
+
+                <img
+                src="imagemLInk3.png"
+                width="175px">
+
+            </a>
+
+            <br>
+
+
+            <!-- BOTÃO 4 -->
+
+            <a href="#"
+            onclick="
+            document.getElementById('x').innerHTML =
+            '<img src=\'imagemanti.png\' width=\'500px\' height=\'500px\'>';
+            return false;
+            ">
+
+                <img
+                src="imagemLInk4.png"
+                width="175px">
+
+            </a>
+
+            <br>
+
+
+            <!-- BOTÃO 5 -->
+
+            <a href="#"
+            onclick="
+            document.getElementById('x').innerHTML =
+            '<img src=\'imagemCinco.png\' width=\'500px\' height=\'500px\'>';
+            return false;
+            ">
+
+                <img
+                src="imagemLInk5.png"
+                width="175px">
+
+            </a>
+
+
+        </td>
+
+
         <!-- CÉLULA 4 - CONTEÚDO -->
 
-        <td>
+        <td
         id="x"
-        width="500"
-        height="500"
+        width="500px"
+        height="500px"
         align="center"
         valign="middle">
 
@@ -63,7 +163,9 @@
 
     </tr>
 
+
 </table>
+
 
 </body>
 </html>
