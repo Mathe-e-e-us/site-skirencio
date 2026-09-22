@@ -9,14 +9,11 @@ style="
     background-attachment: fixed;
 ">
 
-
 <table border="2" align="center">
-
 
     <!-- PRIMEIRA LINHA -->
 
     <tr>
-
 
         <!-- CÉLULA 1 - LOGO -->
 
@@ -47,7 +44,6 @@ style="
 
         </td>
 
-
     </tr>
 
 
@@ -55,18 +51,16 @@ style="
 
     <tr>
 
-
         <!-- CÉLULA 3 - BOTÕES -->
 
         <td width="200px" height="500px" align="center" valign="top">
-
 
             <!-- BOTÃO 1 -->
 
             <a href="#"
             onclick="
             document.getElementById('x').innerHTML =
-            '<img src=\'TextoUm.png\'>';
+            '<img src=\'TextoUm.png\' style=\'max-width:100%; max-height:100%; object-fit:contain; display:block; margin:auto;\'>';
             return false;
             ">
 
@@ -76,7 +70,8 @@ style="
 
             </a>
 
-            <br>
+              
+
 
 
             <!-- BOTÃO 2 -->
@@ -84,7 +79,7 @@ style="
             <a href="#"
             onclick="
             document.getElementById('x').innerHTML =
-            '<img src=\'imagemDois.png\'>';
+            '<img src=\'imagemDois.png\' style=\'max-width:100%; max-height:100%; object-fit:contain; display:block; margin:auto;\'>';
             return false;
             ">
 
@@ -94,15 +89,16 @@ style="
 
             </a>
 
-            <br>
+              
 
 
-            <!-- BOTÃO 3 -->
+
+            <!-- BOTÃO 3 - IMAGEM DE COMPARAÇÃO -->
 
             <a href="#"
             onclick="
             document.getElementById('x').innerHTML =
-            '<img src=\'imagemcomparasao.jpg\'>';
+            '<img src=\'imagemcomparasao.jpg\' style=\'max-width:100%; max-height:100%; object-fit:contain; display:block; margin:auto;\'>';
             return false;
             ">
 
@@ -112,7 +108,8 @@ style="
 
             </a>
 
-            <br>
+              
+
 
 
             <!-- BOTÃO 4 -->
@@ -120,7 +117,7 @@ style="
             <a href="#"
             onclick="
             document.getElementById('x').innerHTML =
-            '<img src=\'imagemanti.png\'>';
+            '<img src=\'imagemanti.png\' style=\'max-width:100%; max-height:100%; object-fit:contain; display:block; margin:auto;\'>';
             return false;
             ">
 
@@ -130,7 +127,8 @@ style="
 
             </a>
 
-            <br>
+              
+
 
 
             <!-- BOTÃO 5 -->
@@ -138,7 +136,7 @@ style="
             <a href="#"
             onclick="
             document.getElementById('x').innerHTML =
-            '<img src=\'imagemqrcode.png\'>';
+            '<img src=\'imagemqrcode.png\' style=\'max-width:100%; max-height:100%; object-fit:contain; display:block; margin:auto;\'>';
             return false;
             ">
 
@@ -148,7 +146,6 @@ style="
 
             </a>
 
-
         </td>
 
 
@@ -156,17 +153,23 @@ style="
 
         <td
         id="x"
+        width="500px"
+        height="500px"
         align="center"
-        valign="middle">
+        valign="middle"
+        style="
+            width:500px;
+            height:500px;
+            max-width:500px;
+            max-height:500px;
+            overflow:hidden;
+        ">
 
         </td>
 
-
     </tr>
 
-
 </table>
-
 
 </body>
 </html>
